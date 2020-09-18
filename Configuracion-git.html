@@ -1,0 +1,46 @@
+/**
+*? Configuración de git y comandos opcionales
+
+** Para mostrar la ubicación o ruta actual del directorio.
+*! $pwd
+
+** Para visualizar toda la configuración actual de git.
+*! $ git config
+
+** Para ver la configuración por defecto de git.
+*! $ git config --list
+
+** Para ver donde esta la configuración guardada (Solo para casos avanzados).
+*! $ git config --list --show-origin
+
+** Para cambiar la configuración del usuario de git.
+*! $ git config --global user.name "Guadalupe Caraveo"
+
+** Para cambiar la configuración del correo de git.
+*! $ git config --global user.email "correo@gmail.com"
+
+** Para crear el repositorio de git en la carpet del proyecto.
+*! $ git init
+
+** Para visualizar los archivos ocultos de git (.git).
+*! $ ls -al
+
+** Para abrir el editor de codigo VS Code.
+*! $ code
+
+** Muestra el estado del proyecto (Para ver si hay cambio o no).
+*! $ git status
+
+** Para borrar el archivo del staging cuando se haya agregado con el comando $ git add.
+*! git rm --cached archivo.txt
+
+** Para agrega un archivo editado a Staging donde se guarda temporalmente antes de ser enviado al repositorio.
+*! $ git add archivo.txt
+
+** Para agregar todos los archivos editados a staging donde se guarda temporalmente antes de ser enviado al repositorio.
+*! $ git add .
+
+** Para enviar los cambios al repositorio, esto se realiza despues de haber agregado los cambios con $ git add.
+*! $ git commit -m "Mensaje del commit"
+
+*/

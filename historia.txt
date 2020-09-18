@@ -1,3 +1,0 @@
-Como algo todavía más específico otra posibilidad es la de encender e interrumpir el mecanismo
-de generar prefijos por cada clase o id de css es nuestro style.css de origen.
-Ver documentación por propiedades ajustables.
