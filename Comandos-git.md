@@ -9,15 +9,11 @@
 ### Analiza todo lo que esta instalado y actualiza la lista de paquetes.
 
 - > `sudo apt-get update`
-
-### Actualizar todos los archivos
-
 - > `sudo apt-get upgrade`
 
 ### Para instalar git
 
 - > `sudo apt-get install git`
-
 
 # Comandos básicos en la terminal:
 
@@ -45,7 +41,7 @@
 
 - > `$ cat`
 
-###  Permite visualizar los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden ser -- + el nombre del argumento o - + una sola letra o shortcut por cada argumento).
+### Permite visualizar los archivos de la carpeta donde estamos ahora mismo. Podemos usar uno o más argumentos para ver más información sobre estos archivos (los argumentos pueden ser -- + el nombre del argumento o - + una sola letra o shortcut por cada argumento).
 
 - > `$ ls`
 
@@ -101,13 +97,21 @@
 
 - > `--help`
 
+### Para salir de la interfaz de mensajes.
+
+- > `Esc + shif + zz`
+
+### Para insertar texto en la interfaz.
+
+- > `Esc + i`
 
 # ¿Qué es Git?
 
-### Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente.  Git funciona como una línea de tiempo que nos permite regresar a momentos específicos del código.
-### En su lugar GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git. 
+### Git es un software de control de versiones diseñado por Linus Torvalds, pensando en la eficiencia y la confiabilidad del mantenimiento de versiones de aplicaciones cuando estas tienen un gran número de archivos de código fuente. Git funciona como una línea de tiempo que nos permite regresar a momentos específicos del código.
 
- # ¿Por qué usar un sistema de control de versiones como Git?
+### En su lugar GitHub es una forja para alojar proyectos utilizando el sistema de control de versiones Git.
+
+# ¿Por qué usar un sistema de control de versiones como Git?
 
 ### Un sistema de control de versiones como Git nos ayuda a guardar el historial de cambios y crecimiento de los archivos de nuestro proyecto.
 
@@ -115,20 +119,21 @@
 
 ### El comando para iniciar nuestro repositorio, es decir, indicarle a Git que queremos usar su sistema de control de versiones en nuestro proyecto, es `git init`.
 
-### El comando para que nuestro repositorio sepa de la existencia de un archivo o sus últimos cambios es git add. Este comando no almacena las actualizaciones de forma definitiva, solo las guarda en algo que conocemos como “Staging Area”.
+### El comando para que nuestro repositorio sepa de la existencia de un archivo o sus últimos cambios es git add. Este comando no almacena las actualizaciones de forma definitiva, solo las guarda en algo que conocemos como **“Staging Area”**.
 
 ### El comando para almacenar definitivamente todos los cambios que por ahora viven en el staging area es `git commit`. También podemos guardar un mensaje para recordar muy bien qué cambios hicimos en este commit con el argumento `-m "Mensaje del commit"`.
 
 ### Por último, si queremos mandar nuestros commits a un servidor remoto, un lugar donde todos podamos conectar nuestros proyectos, usamos el comando `git push`.
 
-
 # Ciclo básico de trabajo en Git
 
-### Para iniciar un repositorio, solo debes ejecutar el comando git init.
+### Para iniciar un repositorio, solo hay que ejecutar el comando `git init`.
 
-### Este comando se encargará de dos cosas: 
->  ###  **1.** Creará una carpeta .git, donde se guardará toda la base de datos con cambios atómicos del proyecto.
->  ### **2.** Creará un área que conocemos como Staging, que guardará temporalmente los archivos y permitirá más adelante guardar estos cambios en el repositorio.
+### Este comando se encargará de dos cosas:
+
+> ### **1.** Creará una carpeta **.git**, donde se guardará toda la base de datos con cambios atómicos del proyecto.
+>
+> ### **2.** Creará un área que conocemos como Staging, que guardará temporalmente los archivos y permitirá más adelante guardar estos cambios en el repositorio.
 
 ## Ciclo de vida o estados de los archivos en Git
 
@@ -138,6 +143,7 @@
 - ### **Archivos Staged:** son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
 - ### **Archivos Unstaged:** entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
 - ### **Archivos Untracked:** son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
+
   ![Tomada del curso de git](img/ciclo.png)
 
 ## Comandos para mover archivos entre los estados de Git:
@@ -165,7 +171,16 @@
 ### Podemos crear todas las ramas y commits que queramos. Podemos aprovechar el registro de cambios de Git para crear ramas, traer versiones viejas del código, arreglarlas y combinarlas de nuevo para mejorar el proyecto.
 
 ### Solo ten en cuenta que combinar estas ramas (sí, hacer “merge”) puede generar conflictos. Algunos archivos pueden ser diferentes en ambas ramas. Git es muy inteligente y puede intentar unir estos cambios automáticamente, pero no siempre funciona. En algunos casos, somos nosotros los que debemos resolver estos conflictos “a mano”.
+
 ![Tomada del curso de git](img/branches.png)
+
+# Volver en el tiempo en nuestro repositorio utilizando reset y checkout
+
+### El comando git checkout + ID del commit nos permite viajar en el tiempo. Podemos volver a cualquier versión anterior de un archivo específico o incluso del proyecto entero. Esta también es la forma de crear ramas y movernos entre ellas.
+
+### También hay una forma de hacerlo un poco más “ruda”: usando el comando `git reset`. En este caso, no solo “volvemos en el tiempo”, sino que borramos los cambios que hicimos después de este commit.
+
+### Hay dos formas de usar git reset: con el argumento --hard, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre) O un poco más seguro, con el argumento --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
 
 # Comandos básicos de git
 
@@ -233,17 +248,42 @@
 
 - > `$ git log`
 
-### Para mostrar todos los cambios historicos realizados.
+### para visualizar los cambios especificos en los archivos a partir del commit.
+
+- > `git log --stat`
+
+### Muestra los cambios que han existido sobre un archivo.
 
 - > `$ git show`
 
+### Para ver la diferencia entre una versión y otra.
+
+- > `git diff commitA commitB.`
+
+### Para volver a cualquier versión anterior de un archivo en específico o incluso del proyecto entero.
+
+- > `git checkout + ID del commit`
+
+### Esta también es la forma de crear ramas y movernos entre ellas.
+
+- > `git checkout + Nombre_branch`
+
+### Permite regresar a una versión anterior, pero tambien se borraran los cambios que se hicieron despues de este commit (Ejemplo `git reset <ID commit>`).
+
+- > `$ git reset`
+
+### Borra toda la información que tengamos en el área de staging (Se borra todo definitivamente).
+
+- > `--hard`
+
+### Mantiene los archivos en el área de staging para poder aplicar los últimos cambios pero desde un commit anterior.
+
+- > `--soft`
+
+###
+
 - > `$ git push`
 
+###
+
 - > `$ git pull`
-
-
-
- 
-
-
-
