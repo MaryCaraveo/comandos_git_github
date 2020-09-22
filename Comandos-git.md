@@ -1,3 +1,5 @@
+# Curso profesional de Git y GitHub
+
 # Instalación de Git en Linux
 
 ### Cada distribución de Linux tiene un comando especial para instalar herramientas y actualizar el sistema. En las distribuciones derivadas de **Debian (como Ubuntu)** el comando especial es `apt-get`, en **Red Hat** es `yum` y en **ArchLinux** es `pacman`.
