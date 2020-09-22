@@ -182,6 +182,38 @@
 
 ### Hay dos formas de usar git reset: con el argumento --hard, borrando toda la información que tengamos en el área de staging (y perdiendo todo para siempre) O un poco más seguro, con el argumento --soft, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
 
+# Git reset vs. Git rm
+
+## git rm
+
+### Este comando nos ayuda a eliminar archivos de Git sin eliminar su historial del sistema de versiones. Esto quiere decir que si necesitamos recuperar el archivo solo debemos “viajar en el tiempo” y recuperar el último commit antes de borrar el archivo en cuestión.
+
+### Recuerda que git rm no se puede usar así nada más, se debe utilizar uno de los flags para indicarle a Git cómo eliminar los archivos que ya no necesitamos en la última versión del proyecto:
+
+- ### **git rm --cached:** Elimina los archivos del área de Staging y del próximo commit pero los mantiene en nuestro disco duro.
+- ### **git rm --force:** Elimina los archivos de Git y del disco duro. Git siempre guarda todo, por lo que podemos acceder al registro de la existencia de los archivos, de modo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+
+## git reset
+
+### Este comando nos ayuda a volver en el tiempo. Pero no como `git checkout` que nos deja ir, mirar, pasear y volver. Con `git reset` volvemos al pasado sin la posibilidad de volver al futuro. Borramos la historia y la debemos sobreescribir. No hay vuelta atrás.
+
+### Este comando es muy peligroso y debemos usarlo solo en caso de emergencia. Hay dos formas de usar git reset:
+
+### Con el argumento `--hard`, borra toda la información que se tenga en el área de staging (y perdiendo todo para siempre) O un poco más seguro, con el argumento `--soft`, que mantiene allí los archivos del área de staging para que podamos aplicar nuestros últimos cambios pero desde un commit anterior.
+
+- ### **`git reset --soft:`** Borra todo el historial y los registros de Git pero guardamos los cambios que tengamos en Staging, así podemos aplicar las últimas actualizaciones a un nuevo commit.
+- ### **`git reset --hard:`** Toda la información de los commits y del área de staging se borra del historial.
+
+- ### **`git reset HEAD:`** Este es el comando para sacar archivos del área de Staging. No para borrarlos ni nada de eso, solo para que los últimos cambios de estos archivos no se envíen al último commit, a menos que cambiemos de opinión y los incluyamos de nuevo en staging con `git add`.
+
+### Si usamos `git reset HEAD`, lo único que haremos será mover estos cambios de Staging a Unstaged. Seguiremos teniendo los últimos cambios del archivo, el repositorio mantendrá el archivo (no con sus últimos cambios pero sí con los últimos en los que hicimos commit) y no habremos perdido nada.
+
+# Introducción a las ramas o branches de Git
+
+### Las ramas son la forma de hacer cambios en nuestro proyecto sin afectar el flujo de trabajo de la rama principal. Esto porque queremos trabajar una parte muy específica de la aplicación o simplemente experimentar.
+
+### La cabecera o HEAD representan la rama y el commit de esa rama donde estamos trabajando. Por defecto, esta cabecera aparecerá en el último commit de nuestra rama principal. Pero podemos cambiarlo al crear una rama (git branch rama, git checkout -b rama) o movernos en el tiempo a cualquier otro commit de cualquier otra rama con los comandos (git reset id-commit, git checkout rama-o-id-commit).
+
 # Comandos básicos de git
 
 ### Para abrir el editor de codigo VS Code.
@@ -232,6 +264,10 @@
 
 - > `$ git add .`
 
+### Sirve para eliminar archivos que ya no necesitemos mantener en nuestro repositorio.
+
+- > `git rm`
+
 ### Para borrar el archivo del staging cuando se haya agregado con el comando `$ git add`.
 
 - > `git rm --cached archivo.txt`
@@ -260,7 +296,7 @@
 
 - > `git diff commitA commitB.`
 
-### Para volver a cualquier versión anterior de un archivo en específico o incluso del proyecto entero.
+### Para volver a cualquier versión anterior de un archivo en específico o incluso del proyecto entero (ejemplo `git checkout + master + nombre archivo`).
 
 - > `git checkout + ID del commit`
 
@@ -268,7 +304,7 @@
 
 - > `git checkout + Nombre_branch`
 
-### Permite regresar a una versión anterior, pero tambien se borraran los cambios que se hicieron despues de este commit (Ejemplo `git reset <ID commit>`).
+### Permite regresar a una versión anterior y sobreescribir toda la historia. Se borraran los cambios que se hicieron despues de este commit (Ejemplo `git reset <ID commit>`).
 
 - > `$ git reset`
 
@@ -280,10 +316,26 @@
 
 - > `--soft`
 
-###
+### Sirve para mover los archivos que no quisieramos incluir en el commit que realizaremos. De esta manera mantenemos los cambios, pero no lo registramos en el commit. Hasta que estemos seguros de incluirlo.
+
+- > `git reset HEAD`
+
+### Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
+
+- > ` git clone url_del_servidor_remoto`
+
+### Luego de hacer git add y git commit debemos ejecutar este comando para enviar los cambios al servidor remoto.
 
 - > `$ git push`
 
-###
+### Se usa para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+
+- > `$ git fetch`
+
+### También usamos el comando `git fetch` con servidores remotos. Se utiliza para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+
+- > `git merge`
+
+### Básicamente, git fetch y git merge al mismo tiempo.
 
 - > `$ git pull`
