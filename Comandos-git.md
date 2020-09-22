@@ -115,6 +115,7 @@
 ### Luego de hacer git add y git commit debemos ejecutar este comando para enviar los cambios al servidor remoto.
 
 - > `$ git push`
+- > `$ git push origin master`
 
 ### Se usa para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local. También usamos el comando `git fetch` con servidores remotos.
 
@@ -127,6 +128,10 @@
 ### Básicamente, git fetch y git merge al mismo tiempo.
 
 - > `$ git pull`
+
+### Para actualizar la información del repositorio master al local.
+
+- > `$ git pull origin master`
 
 ### Para agregar un origin remoto de los archivos.
 
