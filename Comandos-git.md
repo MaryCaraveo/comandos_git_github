@@ -236,6 +236,10 @@
 
 - > `git reset HEAD`
 
+### Para borrar commits.
+
+- > `git branch -d`
+
 ### Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
 
 - > ` git clone url_del_servidor_remoto`
@@ -244,11 +248,11 @@
 
 - > `$ git push`
 
-### Se usa para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local (en caso de que hayan, por supuesto).
+### Se usa para traer actualizaciones del servidor remoto y guardarlas en nuestro repositorio local. También usamos el comando `git fetch` con servidores remotos.
 
 - > `$ git fetch`
 
-### También usamos el comando `git fetch` con servidores remotos. Se utiliza para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo (ejemplo git merge <nombre de la rama>).
+### Se utiliza para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo (ejemplo `git merge "nombre de la rama"`).
 
 - > `git merge`
 
