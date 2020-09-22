@@ -144,3 +144,7 @@
 ### Comando para verificar que la URL se haya guardado corretamente, nos deberia traer la url donde hariamos el fecht y el push.
 
 - > `git remote -v`
+
+### Para forzar los cambios cuando existen historias o commit diferentes.
+
+- > `git pull origin master --allow-unrelated-histories`
