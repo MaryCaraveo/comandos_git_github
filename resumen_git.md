@@ -113,7 +113,7 @@
 
 ### El comando git merge nos permite crear un nuevo commit con la combinación de dos ramas (la rama donde nos encontramos cuando ejecutamos el comando y la rama que indiquemos después del comando).
 
-![Tomada del curso de git](img/merge.png)
+![Curso de git](img/merge.PNG)
 
 # Uso de GitHub
 
@@ -127,4 +127,4 @@
 
 ### Sin embargo, esto solo funciona para las personas que quieren empezar a contribuir en el proyecto. Si queremos conectar el repositorio de GitHub con nuestro repositorio local, el que creamos con git init, debemos ejecutar las siguientes instrucciones:
 
-![Tomada del curso de git](img/github.png)
+![Curso git](img/github.PNG)
