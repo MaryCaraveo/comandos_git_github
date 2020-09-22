@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 # Curso profesional de Git y GitHub
-=======
-# Curso basico de Git
->>>>>>> curso_git
 
 # Instalación de Git en Linux
 
