@@ -1,9 +1,5 @@
 # Comandos básicos en la terminal:
 
-### Para mostrar la lista de archivos y carpetas en la ruta ubicada.
-
-- > `$ ls`
-
 ### Muestra la ruta de carpetas en la que nos encontramos.
 
 - > `$ pwd `

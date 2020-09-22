@@ -248,7 +248,7 @@
 
 - > `$ git fetch`
 
-### También usamos el comando `git fetch` con servidores remotos. Se utiliza para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo.
+### También usamos el comando `git fetch` con servidores remotos. Se utiliza para combinar los últimos cambios del servidor remoto y nuestro directorio de trabajo (ejemplo git merge <nombre de la rama>).
 
 - > `git merge`
 
