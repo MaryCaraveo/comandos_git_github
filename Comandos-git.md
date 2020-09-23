@@ -32,6 +32,8 @@
 
 - > `$ git config --global user.email "correo@gmail.com"`
 
+---
+
 ### Para inicializar el repositorio de git en la carpeta del proyecto.
 
 - > `$ git init`
@@ -80,6 +82,8 @@
 
 - > `git diff commitA commitB.`
 
+---
+
 ### Para volver a cualquier versión anterior de un archivo en específico o incluso del proyecto entero (ejemplo `git checkout + master + nombre archivo`).
 
 - > `git checkout + ID del commit`
@@ -107,6 +111,8 @@
 ### Para borrar commits.
 
 - > `git branch -d`
+
+---
 
 ### Nos permite descargar los archivos de la última versión de la rama principal y todo el historial de cambios en la carpeta .git.
 
@@ -149,6 +155,8 @@
 
 - > `git pull origin master --allow-unrelated-histories`
 
+---
+
 ### Generar llaves SSH (windows, Linux, Mac).
 
 - > `ssh-keygen -t rsa -b 4096 -C "tu@email.com"`
@@ -172,3 +180,29 @@
 ### Añadir tu llave SSH al "servidor" de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
 
 - > `ssh-add -K ruta-donde-guardaste-tu-llave-privada`
+
+### Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
+
+- > `git remote set-url origin url-ssh-del-repositorio-en-github`
+
+---
+
+### Para crear un nuevo tag y asignarlo a un commit.
+
+- > `git tag -a nombre-del-tag id-del-commit`.
+
+### Borrar un tag en el repositorio local.
+
+- > `git tag -d nombre-del-tag`.
+
+### Listar los tags de nuestro repositorio local.
+
+- > `git tag o git show-ref --tags`.
+
+### Publicar un tag en el repositorio remoto.
+
+- > `git push origin --tags`.
+
+### Borrar un tag del repositorio remoto.
+
+- > `git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
