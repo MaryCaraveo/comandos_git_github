@@ -148,3 +148,27 @@
 ### Para forzar los cambios cuando existen historias o commit diferentes.
 
 - > `git pull origin master --allow-unrelated-histories`
+
+### Generar llaves SSH (windows, Linux, Mac).
+
+- > `ssh-keygen -t rsa -b 4096 -C "tu@email.com"`
+
+### Para encender el servidor de llaves SSH de la computadora (windows, Linux).
+
+- > `eval $(ssh-agent -s)`
+
+### Para añadir la llave SSH a este servidor (windows, Linux).
+
+- > `ssh-add ruta-gurdate-tu-llave-privada`
+
+### Encender el servidor de llaves SSH de la computadora (Mac).
+
+- > `eval "$(ssh-agent -s)"`
+
+### Si usas una versión de OSX superior a Mac Sierra (v10.12) debes crear o modificar un archivo "config" en la carpeta de tu usuario con el siguiente contenido (ten cuidado con las mayúsculas):
+
+![Curso git](img/host.PNG)
+
+### Añadir tu llave SSH al "servidor" de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
+
+- > `ssh-add -K ruta-donde-guardaste-tu-llave-privada`
