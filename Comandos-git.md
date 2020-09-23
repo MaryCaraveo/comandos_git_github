@@ -191,6 +191,10 @@
 
 - > `git tag -a nombre-del-tag id-del-commit`.
 
+### Para agregar un tag y agregarlo a un commit con su hash.
+
+- > `git tag + -a + version (v0.1) + -m + "Mensaje del commit" + hash (id commit)`
+
 ### Borrar un tag en el repositorio local.
 
 - > `git tag -d nombre-del-tag`.
@@ -206,3 +210,23 @@
 ### Borrar un tag del repositorio remoto.
 
 - > `git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
+
+### Para mostrar todo lo que se ha hechos historicamnete en el proyecto,.
+
+- > `git log --all`
+
+### Muestra las lineas de color de como se han fusionado las ramas en el proyecto.
+
+- > `git log --all --graph`
+
+### Para mostrar todo la historia del proyecto de manera más comprimida.
+
+- > `git log --all --graph --decorate --oneline`
+
+### Para agregar un alias al comando con un nombre más corto (temporal, mientras la terminal este activa).
+
+- > `alias arbolito="git log --all --graph --decorate --oneline"`
+
+### Para crear un alias de manera global.
+
+- > `git config --global alias.arbolito “git log --all --graph --decorate --oneline”`
