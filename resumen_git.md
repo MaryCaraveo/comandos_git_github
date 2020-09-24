@@ -193,3 +193,11 @@
 ### Publicar una rama local al repositorio remoto: `git push origin nombre-de-la-rama`.
 
 ### Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando `gitk`.
+
+# Flujo de trabajo profesional con Pull requests
+
+### En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
+
+### Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
+
+![Curso git](img/pull.PNG)
