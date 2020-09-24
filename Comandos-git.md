@@ -141,37 +141,37 @@
 
 ### Para agregar un origin remoto de los archivos.
 
-- > `git remote add origin "link del repositorio en git"`
+- > `$ git remote add origin "link del repositorio en git"`
 
 ### Para mostrar el repositorio remoto.
 
-- > `git remote`
+- > `$ git remote`
 
 ### Comando para verificar que la URL se haya guardado corretamente, nos deberia traer la url donde hariamos el fecht y el push.
 
-- > `git remote -v`
+- > `$ git remote -v`
 
 ### Para forzar los cambios cuando existen historias o commit diferentes.
 
-- > `git pull origin master --allow-unrelated-histories`
+- > `$ git pull origin master --allow-unrelated-histories`
 
 ---
 
 ### Generar llaves SSH (windows, Linux, Mac).
 
-- > `ssh-keygen -t rsa -b 4096 -C "tu@email.com"`
+- > `$ ssh-keygen -t rsa -b 4096 -C "tu@email.com"`
 
 ### Para encender el servidor de llaves SSH de la computadora (windows, Linux).
 
-- > `eval $(ssh-agent -s)`
+- > `$ eval $(ssh-agent -s)`
 
 ### Para añadir la llave SSH a este servidor (windows, Linux).
 
-- > `ssh-add ruta-gurdate-tu-llave-privada`
+- > `$ ssh-add ruta-gurdate-tu-llave-privada`
 
 ### Encender el servidor de llaves SSH de la computadora (Mac).
 
-- > `eval "$(ssh-agent -s)"`
+- > `$ eval "$(ssh-agent -s)"`
 
 ### Si usas una versión de OSX superior a Mac Sierra (v10.12) debes crear o modificar un archivo "config" en la carpeta de tu usuario con el siguiente contenido (ten cuidado con las mayúsculas):
 
@@ -179,54 +179,101 @@
 
 ### Añadir tu llave SSH al "servidor" de llaves SSH de tu computadora (en caso de error puedes ejecutar este mismo comando pero sin el argumento -K):
 
-- > `ssh-add -K ruta-donde-guardaste-tu-llave-privada`
+- > `$ ssh-add -K ruta-donde-guardaste-tu-llave-privada`
 
 ### Ahora podemos actualizar la URL que guardamos en nuestro repositorio remoto, solo que, en vez de guardar la URL con HTTPS, vamos a usar la URL con SSH:
 
-- > `git remote set-url origin url-ssh-del-repositorio-en-github`
+- > `$ git remote set-url origin url-ssh-del-repositorio-en-github`
 
 ---
 
 ### Para crear un nuevo tag y asignarlo a un commit.
 
-- > `git tag -a nombre-del-tag id-del-commit`.
+- > `$ git tag -a nombre-del-tag id-del-commit`.
 
 ### Para agregar un tag y agregarlo a un commit con su hash.
 
-- > `git tag + -a + version (v0.1) + -m + "Mensaje del commit" + hash (id commit)`
+- > `$ git tag + -a + version (v0.1) + -m + "Mensaje del commit" + hash (id commit)`
 
 ### Borrar un tag en el repositorio local.
 
-- > `git tag -d nombre-del-tag`.
+- > `$ git tag -d nombre-del-tag`.
 
 ### Listar los tags de nuestro repositorio local.
 
-- > `git tag o git show-ref --tags`.
+- > `$ git tag o git show-ref --tags`.
 
 ### Publicar un tag en el repositorio remoto.
 
-- > `git push origin --tags`.
+- > `$ git push origin --tags`.
 
 ### Borrar un tag del repositorio remoto.
 
-- > `git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
+- > `$ git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
 
 ### Para mostrar todo lo que se ha hechos historicamnete en el proyecto,.
 
-- > `git log --all`
+- > `$ git log --all`
 
 ### Muestra las lineas de color de como se han fusionado las ramas en el proyecto.
 
-- > `git log --all --graph`
+- > `$ git log --all --graph`
 
 ### Para mostrar todo la historia del proyecto de manera más comprimida.
 
-- > `git log --all --graph --decorate --oneline`
+- > `$ git log --all --graph --decorate --oneline`
 
 ### Para agregar un alias al comando con un nombre más corto (temporal, mientras la terminal este activa).
 
-- > `alias arbolito="git log --all --graph --decorate --oneline"`
+- > `$ alias arbolito="git log --all --graph --decorate --oneline"`
 
 ### Para crear un alias de manera global.
 
-- > `git config --global alias.arbolito “git log --all --graph --decorate --oneline”`
+- > `$ git config --global alias.arbolito “git log --all --graph --decorate --oneline”`
+
+---
+
+### Para saber la diferencia entre los cambios que hay en local y los cambios remoto (Ejemplo `git fetch` `git diff master origin/master`)
+
+- > `$ git fetch`
+- > `$ git diff <local_branch> <remote_branch>`
+
+### Para cambiar el nombre a una rama
+
+- > `$ git branch -m rama_vieja rama_nueva`
+
+### Para verificar que se han aplicado los cambios.
+
+- > `$ git branch -a`
+
+### En caso de que la rama_vieja este en un repositorio de github, basta con ejecutar el comando push de la siguiente forma.
+
+- > `$ git push origin --delete rama_vieja`
+- > `$ git push origin :rama_vieja rama_nueva`
+
+---
+
+### Muestra todas las ramas que existen.
+
+- > `$ git branch`
+
+### Muestra las ramas que existen y sus historias.
+
+- > `$ git show-branch`
+
+### Muestra algo similar que el comando anterior pero con más datos.
+
+- > `$ git show-branch --all`
+
+### Crear una rama en el repositorio local.
+
+- > `$ git branch nombre-de-la-rama`
+- > `$ git checkout -b nombre-de-la-rama`.
+
+### Publicar una rama local al repositorio remoto.
+
+- > `$ git push origin nombre-de-la-rama`.
+
+### Para ver gráficamente nuestro entorno y flujo de trabajo local con Git.
+
+- > `$ gitk`
