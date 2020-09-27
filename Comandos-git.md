@@ -277,3 +277,20 @@
 ### Para ver gráficamente nuestro entorno y flujo de trabajo local con Git.
 
 - > `$ gitk`
+- 
+---
+
+### Para trabajar con más de un repositorio remoto y poder trabajar con ambos es necesario crear un repositorio remoto adicional.
+
+- > `git remote add <nombre_del_remoto> <url_del_remoto> `
+- > `git remote upstream https://github.com/freddier/hyperblog`
+
+### Al crear un remoto adicional podremos, hacer pull desde el nuevo origen (en caso de tener permisos podremos hacer fetch y push).
+
+- > `git pull <remoto> <rama>`
+- > `git pull upstream master`
+  
+### Éste pull traerá los cambios del remoto, por lo que estará al día en el proyecto, el flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
+
+- > `git pull upstream master`
+- > `git push origin master`
