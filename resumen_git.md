@@ -28,28 +28,28 @@ Este comando se encargará de dos cosas:
 
 > **1.** Creará una carpeta **.git**, donde se guardará toda la base de datos con cambios atómicos del proyecto.
 
->  **2.** Creará un área que conocemos como Staging, que guardará temporalmente los archivos y permitirá más adelante guardar estos cambios en el repositorio.
+> **2.** Creará un área que conocemos como Staging, que guardará temporalmente los archivos y permitirá más adelante guardar estos cambios en el repositorio.
 
 ## Ciclo de vida o estados de los archivos en Git
 
 Cuando trabajamos con Git nuestros archivos pueden vivir y moverse entre 4 diferentes estados:
 
--  **Archivos Tracked:** son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
--  **Archivos Staged:** son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
--  **Archivos Unstaged:** entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
--  **Archivos Untracked:** son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
+- **Archivos Tracked:** son los archivos que viven dentro de Git, no tienen cambios pendientes y sus últimas actualizaciones han sido guardadas en el repositorio gracias a los comandos git add y git commit.
+- **Archivos Staged:** son archivos en Staging. Viven dentro de Git y hay registro de ellos porque han sido afectados por el comando git add, aunque no sus últimos cambios. Git ya sabe de la existencia de estos últimos cambios, pero todavía no han sido guardados definitivamente en el repositorio porque falta ejecutar el comando git commit.
+- **Archivos Unstaged:** entiéndelos como archivos “Tracked pero Unstaged”. Son archivos que viven dentro de Git pero no han sido afectados por el comando git add ni mucho menos por git commit. Git tiene un registro de estos archivos, pero está desactualizado, sus últimas versiones solo están guardadas en el disco duro.
+- **Archivos Untracked:** son archivos que NO viven dentro de Git, solo en el disco duro. Nunca han sido afectados por git add, así que Git no tiene registros de su existencia.
 
-  ![Tomada del curso de git](img/ciclo.png)
+![Tomada del curso de git](img/ciclo.png)
 
 ## Comandos para mover archivos entre los estados de Git:
 
--  **git status:** nos permite ver el estado de todos nuestros archivos y carpetas.
--  **git add:** nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
--  **git reset HEAD:** nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.
--  **git commit:** nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardado o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
--  **git rm:** este comando necesita alguno de los siguientes argumentos para poder ejecutarse correctamente:
--  **git rm --cached:** Mueve los archivos que le indiquemos al estado Untracked.
--  **git rm --force:** Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
+- **git status:** nos permite ver el estado de todos nuestros archivos y carpetas.
+- **git add:** nos ayuda a mover archivos del Untracked o Unstaged al estado Staged. Podemos usar git nombre-del-archivo-o-carpeta para añadir archivos y carpetas individuales o git add -A para mover todos los archivos de nuestro proyecto (tanto Untrackeds como unstageds).
+- **git reset HEAD:** nos ayuda a sacar archivos del estado Staged para devolverlos a su estado anterior. Si los archivos venían de Unstaged, vuelven allí. Y lo mismo se venían de Untracked.
+- **git commit:** nos ayuda a mover archivos de Unstaged a Tracked. Esta es una ocasión especial, los archivos han sido guardado o actualizados en el repositorio. Git nos pedirá que dejemos un mensaje para recordar los cambios que hicimos y podemos usar el argumento -m para escribirlo (git commit -m "mensaje").
+- **git rm:** este comando necesita alguno de los siguientes argumentos para poder ejecutarse correctamente:
+- **git rm --cached:** Mueve los archivos que le indiquemos al estado Untracked.
+- **git rm --force:** Elimina los archivos de Git y del disco duro. Git guarda el registro de la existencia de los archivos, por lo que podremos recuperarlos si es necesario (pero debemos usar comandos más avanzados).
 
 # ¿Qué es un Branch y cómo funciona un Merge en Git?
 
@@ -131,26 +131,26 @@ Sin embargo, esto solo funciona para las personas que quieren empezar a contribu
 
 # Cómo funcionan las llaves públicas y privadas
 
- Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.
+Las llaves públicas y privadas nos ayudan a cifrar y descifrar nuestros archivos de forma que los podamos compartir sin correr el riesgo de que sean interceptados por personas con malas intenciones.
 
- La forma de hacerlo es la siguiente:
+La forma de hacerlo es la siguiente:
 
--  Ambas personas deben crear su llave pública y privada.
--  Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).
--  La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
--  El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.
--  La persona a la que enviamos el mensaje cifrado puede usar su llave privada para descifrar el mensaje y ver los archivos.
--  Puedes compartir tu llave pública pero nunca tu llave privada.
+- Ambas personas deben crear su llave pública y privada.
+- Ambas personas pueden compartir su llave pública a las otras partes (recuerda que esta llave es pública, no hay problema si la “interceptan”).
+- La persona que quiere compartir un mensaje puede usar la llave pública de la otra persona para cifrar los archivos y asegurarse que solo puedan ser descifrados con la llave privada de la persona con la que queremos compartir el mensaje.
+- El mensaje está cifrado y puede ser enviado a la otra persona sin problemas en caso de que los archivos sean interceptados.
+- La persona a la que enviamos el mensaje cifrado puede usar su llave privada para descifrar el mensaje y ver los archivos.
+- Puedes compartir tu llave pública pero nunca tu llave privada.
 
 ![Curso git](img/llave_publica.PNG)
 
 # Configura tus llaves SSH en local
 
- **Primer paso: Generar tus llaves SSH.** Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
+**Primer paso: Generar tus llaves SSH.** Recuerda que es muy buena idea proteger tu llave privada con una contraseña.
 
 ![Curso git](img/SSH1.PNG)
 
- **Segundo paso:** Terminar de configurar nuestro sistema.
+**Segundo paso:** Terminar de configurar nuestro sistema.
 
 **En Windows y Linux:**
 
@@ -178,23 +178,23 @@ Los tags o etiquetas nos permiten asignar versiones a los commits con cambios m�
 
 Comandos para trabajar con etiquetas:
 
--  Crear un nuevo tag y asignarlo a un commit: `git tag -a nombre-del-tag id-del-commit`.
--  Borrar un tag en el repositorio local: `git tag -d nombre-del-tag`.
--  Listar los tags de nuestro repositorio local: `git tag o git show-ref --tags`.
--  Publicar un tag en el repositorio remoto: `git push origin --tags`.
--  Borrar un tag del repositorio remoto: `git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
+- Crear un nuevo tag y asignarlo a un commit: `git tag -a nombre-del-tag id-del-commit`.
+- Borrar un tag en el repositorio local: `git tag -d nombre-del-tag`.
+- Listar los tags de nuestro repositorio local: `git tag o git show-ref --tags`.
+- Publicar un tag en el repositorio remoto: `git push origin --tags`.
+- Borrar un tag del repositorio remoto: `git tag -d nombre-del-tag y git push origin :refs/tags/nombre-del-tag`.
 
 # Manejo de ramas en GitHub
 
 Puedes trabajar con ramas que nunca envías a GitHub, así como pueden haber ramas importantes en GitHub que nunca usas en el repositorio local. Lo importante es que aprendas a manejarlas para trabajar profesionalmente.
 
-Crear una rama en el repositorio local: 
+Crear una rama en el repositorio local:
 
 `git branch nombre-de-la-rama` o `git checkout -b nombre-de-la-rama`.
 
-Publicar una rama local al repositorio remoto: 
+Publicar una rama local al repositorio remoto:
 
- `git push origin nombre-de-la-rama`.
+`git push origin nombre-de-la-rama`.
 
 Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local con Git usando el comando `gitk`.
 
@@ -202,7 +202,7 @@ Recuerda que podemos ver gráficamente nuestro entorno y flujo de trabajo local 
 
 En un entorno profesional normalmente se bloquea la rama master, y para enviar código a dicha rama pasa por un code review y luego de su aprobación se unen códigos con los llamados merge request.
 
- Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
+Para realizar pruebas enviamos el código a servidores que normalmente los llamamos staging develop (servidores de pruebas) luego de que se realizan las pruebas pertinentes tanto de código como de la aplicación estos pasan a el servidor de producción con el ya antes mencionado merge request.
 
 ![Curso git](img/pull.PNG)
 
@@ -220,35 +220,38 @@ Al hacer un fork, GitHub sabe que se hizo el fork del proyecto, por lo que se le
 
 ## Trabajando con más de 1 repositorio remoto
 
- Cuando trabajas en un proyecto que existe en diferentes repositorios remotos (normalmente a causa de un fork) es muy probable que desees poder trabajar con ambos repositorios, para ésto puedes crear un remoto adicional desde consola.
+Cuando trabajas en un proyecto que existe en diferentes repositorios remotos (normalmente a causa de un fork) es muy probable que desees poder trabajar con ambos repositorios, para ésto puedes crear un remoto adicional desde consola.
 
-  > `git remote add <nombre_del_remoto> <url_del_remoto> `
+> `git remote add <nombre_del_remoto> <url_del_remoto> `
 
-  > `git remote upstream https://github.com/freddier/hyperblog`
-  
+> `git remote upstream https://github.com/freddier/hyperblog`
+
 Al crear un remoto adicional podremos, hacer pull desde el nuevo origen (en caso de tener permisos podremos hacer fetch y push).
 
- > `git pull <remoto> <rama>`
+> `git pull <remoto> <rama>`
 
- > `git pull upstream master`
-  
+> `git pull upstream master`
+
 Éste pull nos traerá los cambios del remoto, por lo que se estará al día en el proyecto, el flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
 
- > `git pull upstream master`
+> `git pull upstream master`
 
- > `git push origin master`
+> `git push origin master`
 
 ![Curso git](img/fork.PNG)
 
 # Readme.md es una excelente práctica
+
 README.md es una excelente práctica en tus proyectos, md significa Markdown, que es una especie de código que te permite cambiar la manera en que se ve un archivo de texto.
 
 Lo interesante de Markdown es que funciona en muchas páginas, por ejemplo la edición en Wikipedia; es un lenguaje intermedio que no es HTML, no es texto plano, es una manera de crear excelentes texto formateados.
 
 # Tu sitio web público con GitHub Pages
+
 GitHub tiene un servicio de hosting gratis llamado GitHub Pages, tu puedes tener un repositorio donde el contenido del repositorio se vaya a GitHub y se vea online.
 
 # Git Rebase: reorganizando el trabajo realizado.
+
 El comando rebase es una mala práctica, nunca se debe usar. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
 
 ![Curso git](img/rebase1.PNG)
@@ -263,3 +266,73 @@ Aplicamos rebase para traer los cambios de la rama que queremos.
 > `$ git rebase master`
 
 Primero se debe de hacer rebase desde la rama donde están los cambios, y luego se le hace rebase a la rama final donde van a quedar los cambios.
+
+# Git Stash: Guardar cambios en memoria y recuperarlos después
+
+Cuando necesitamos regresar en el tiempo porque borramos alguna línea de código pero no queremos pasarnos a otra rama porque nos daría un error ya que debemos pasar ese “mal cambio” que hicimos a stage, podemos usar git stash para regresar el cambio anterior que hicimos.
+
+git stash es típico cuando estamos cambios que no merecen una rama o no merecen un rebase si no simplemente estamos probando algo y luego quieres volver rápidamente a tu versión anterior la cual es la correcta.
+
+Si haces un cambio en alguna rama (master) pero luego ya no funciona el código y no recuerdas como es el original y sabes que en una rama está la verión correcta, debes de realizar lo siguiente:
+
+1. Los cambios en master se guardan temporalmente sin ponerlo en stage o hacer commit.
+
+> `git stash`
+
+Para ver lo que está en stash.
+
+> `git stash list`
+
+Cambiar de rama para ver cómo era el código antes.
+
+> `git checkout developer`
+
+Para regresar a la rama master para ver donde está el error.
+
+> `git checkout master`
+
+Recuperar el código con el error y hacer los cambios.
+
+> `git stash pop`
+
+Para guardar el commit.
+
+> `git commit -am "mensaje"`
+
+2. Para guardar los cambios realizados en una rama (master) en una nueva rama.
+
+> `git stash`
+
+> `git stash list`
+
+Para guardar los cambios en una nueva rama.
+
+> `git stash branch <nombre_rama>`
+
+Para hacer commit en la rama nueva.
+
+> `git commit -am "Versión en inglés"`
+
+3. Para borrar todos los cambios y dejarlo como estaba en el último commit.
+
+> `git stash`
+
+> `git stash list`
+
+> `git drop`
+
+4. Si llevas un trabajo avanzado en tu rama y quieres cambiar de rama para revisar algo y luego volver y seguir con el trabajo.
+
+> `git stash`
+
+> `git stash list`
+
+Cambiar de rama para revisar.
+
+> `git checkout develop`
+
+Cambiar de rama para seguir el trabajo.
+
+> `git checkout master`
+
+> `git pop`
