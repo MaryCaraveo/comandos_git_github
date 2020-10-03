@@ -348,3 +348,15 @@ Para ver el log de todos los commits realizados en el proyecto.
 Para traerse commits viejos a head de una rama.
 
 `$ git cherry-pick IDCommit`
+
+Para modificar el mensaje del commit más reciente.
+
+`$ git commit --amend`
+
+Para modificar el commit más reciente y su mensaje en la misma línea.
+
+`$ git commit --amend -m`
+
+Para modificar el commit sin modificar el mensaje de dicho commit.
+
+`$ git commit --amend --no-edit`

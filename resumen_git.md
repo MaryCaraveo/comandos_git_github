@@ -365,3 +365,7 @@ Después de ejecutar `$ git cherry-pick <hash_commit>` desde la rama master:
 ![Curso git](img/git2.PNG)
 
 La confirmación f se ha sido introducido con éxito en la rama de funcionalidad.
+
+# Reconstruir commits en Git con amend
+
+A veces hacemos un commit, pero resulta que no queríamos mandarlo porque faltaba algo más. Utilizamos git commit --amend, amend en inglés es remendar y lo que hará es que los cambios que hicimos nos los agregará al commit anterior.
