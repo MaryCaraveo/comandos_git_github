@@ -247,3 +247,14 @@ Lo interesante de Markdown es que funciona en muchas páginas, por ejemplo la ed
 
 # Tu sitio web público con GitHub Pages
 GitHub tiene un servicio de hosting gratis llamado GitHub Pages, tu puedes tener un repositorio donde el contenido del repositorio se vaya a GitHub y se vea online.
+
+# Git Rebase: reorganizando el trabajo realizado.
+El comando rebase es una mala práctica, nunca se debe usar, pero para efectos del curso te lo vamos a enseñar para que hagas tus propios experimentos. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+
+Cambiamos a la rama que queremos traer los cambios.
+
+> `$ git checkout experiment`
+
+Aplicamos rebase para traer los cambios de la rama que queremos.
+
+> `$ git rebase master`

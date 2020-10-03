@@ -8,9 +8,10 @@ Con el sistema actualizado, se procede a instalar **Git**, el comando para hacer
 
 Analiza todo lo que esta instalado y actualiza la lista de paquetes.
 
-- > `sudo apt-get update`
-- > `sudo apt-get upgrade`
+  > `sudo apt-get update`
+  
+  > `sudo apt-get upgrade`
   
  Para instalar git.
 
-- > `sudo apt-get install git`
+  > `sudo apt-get install git`
