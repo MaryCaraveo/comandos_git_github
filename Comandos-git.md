@@ -340,3 +340,11 @@ Prueba en seco revisa los archicos antes de borrarlos.
 Para borra los archivos que pasan por prueba en seco.
 
 > `$ git clean -f`
+
+Para ver el log de todos los commits realizados en el proyecto.
+
+`$ git log --oneline`
+
+Para traerse commits viejos a head de una rama.
+
+`$ git cherry-pick IDCommit`

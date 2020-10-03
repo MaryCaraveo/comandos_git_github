@@ -343,3 +343,25 @@ A veces creamos archivos cuando estamos realizando nuestro proyecto que realment
 
 Para saber qué archivos vamos a borrar tecleamos `git clean --dry-run`
 Para borrar todos los archivos listados (que no son carpetas) tecleamos `git clean -f`
+
+# Git cherry-pick: traer commits viejos al head de un branch
+
+Existe un mundo alternativo en el cual vamos avanzando en una rama pero necesitamos en master uno de esos avances de la rama, para eso utilizamos el comando `$ git cherry-pick IDCommit` .
+
+cherry-pick es una mala práctica porque significa que estamos reconstruyendo la historia, usa cherry-pick con sabiduría. Si no sabes lo que estás haciendo ten mucho cuidado.
+
+Este comando permite agarrar uno o varios commits de otra rama sin tener que hacer un merge completo. El uso de git cherry-pick es sencillo y se puede ejecutar de la siguiente manera:
+
+> `$ git checkout master`
+
+> `git cherry-pick <hash_commit>`
+
+Antes del git cherry-pick:
+
+![Curso git](img/git.PNG)
+
+Después de ejecutar `$ git cherry-pick <hash_commit>` desde la rama master:
+
+![Curso git](img/git2.PNG)
+
+La confirmación f se ha sido introducido con éxito en la rama de funcionalidad.
