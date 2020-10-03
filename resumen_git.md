@@ -249,7 +249,10 @@ Lo interesante de Markdown es que funciona en muchas páginas, por ejemplo la ed
 GitHub tiene un servicio de hosting gratis llamado GitHub Pages, tu puedes tener un repositorio donde el contenido del repositorio se vaya a GitHub y se vea online.
 
 # Git Rebase: reorganizando el trabajo realizado.
-El comando rebase es una mala práctica, nunca se debe usar, pero para efectos del curso te lo vamos a enseñar para que hagas tus propios experimentos. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+El comando rebase es una mala práctica, nunca se debe usar. Con rebase puedes recoger todos los cambios confirmados en una rama y ponerlos sobre otra.
+
+![Curso git](img/rebase1.PNG)
+![Curso git](img/rebase2.PNG)
 
 Cambiamos a la rama que queremos traer los cambios.
 
@@ -258,3 +261,5 @@ Cambiamos a la rama que queremos traer los cambios.
 Aplicamos rebase para traer los cambios de la rama que queremos.
 
 > `$ git rebase master`
+
+Primero se debe de hacer rebase desde la rama donde están los cambios, y luego se le hace rebase a la rama final donde van a quedar los cambios.

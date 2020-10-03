@@ -301,3 +301,11 @@ Al crear un remoto adicional podremos, hacer pull desde el nuevo origen (en caso
   > `git pull upstream master`
 
   > `git push origin master`
+
+Para borrar una rama.
+
+  > `$ git branch -D <nombre_rama>`
+
+Recopila uno a uno los cambios confirmados en una rama y los reaplica sobre otra.
+
+> `$ git rebase master`
