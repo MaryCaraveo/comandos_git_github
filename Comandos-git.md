@@ -286,21 +286,21 @@ Para ver gráficamente nuestro entorno y flujo de trabajo local con Git.
 
 Para trabajar con más de un repositorio remoto y poder trabajar con ambos es necesario crear un repositorio remoto adicional.
 
-> `git remote add <nombre_del_remoto> <url_del_remoto> `
+> `$ git remote add <nombre_del_remoto> <url_del_remoto> `
 
-> `git remote upstream https://github.com/freddier/hyperblog`
+> `$ git remote upstream https://github.com/freddier/hyperblog`
 
 Al crear un remoto adicional podremos, hacer pull desde el nuevo origen (en caso de tener permisos podremos hacer fetch y push).
 
-> `git pull <remoto> <rama>`
+> `$ git pull <remoto> <rama>`
 
-> `git pull upstream master`
+> `$ git pull upstream master`
 
 Éste pull traerá los cambios del remoto, por lo que estará al día en el proyecto, el flujo de trabajo cambia, en adelante se estará trabajando haciendo pull desde el upstream y push al origin para pasar a hacer pull request.
 
-> `git pull upstream master`
+> `$ git pull upstream master`
 
-> `git push origin master`
+> `$ git push origin master`
 
 Para borrar una rama.
 
@@ -312,23 +312,31 @@ Recopila uno a uno los cambios confirmados en una rama y los reaplica sobre otra
 
 Para guardar los cambios en memoria de manera temporal
 
-> `git stash `
+> `$ git stash `
 
 Para traer los cambios que se encuentran en memoria.
 Muestra los cambios guardados en stash, también podemos mostrar los cambios de un stash determinado usando su índice que nos muestra el git stash list "git stash pop stash@{1} " siendo el índice {0} el último stash guardado.
 
-> `git stash pop`
+> `$ git stash pop`
 
 Muestra la lista de todos los stash que tengamos guardados.
 
-> `git stash list`
+> `$ git stash list`
 
 Para borrar los cambios guardados en stash.
 
-> `git stash drop`
+> `$ git stash drop`
 
 Para crear una nueva rama y enviar todos los cambios.
 
-> `git stash branch nombre_rama`
+> `$ git stash branch nombre_rama`
 
 > **Nota:** recuerda regresar a la rama original antes de quitar el stash.
+
+Prueba en seco revisa los archicos antes de borrarlos.
+
+> `$ git clean --dry-run`
+
+Para borra los archivos que pasan por prueba en seco.
+
+> `$ git clean -f`
