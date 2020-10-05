@@ -307,6 +307,7 @@ Para borrar una rama.
 > `$ git branch -D <nombre_rama>`
 
 Recopila uno a uno los cambios confirmados en una rama y los reaplica sobre otra.
+Reescribe la historia del repositorio.
 
 > `$ git rebase master`
 
@@ -346,6 +347,7 @@ Para ver el log de todos los commits realizados en el proyecto.
 `$ git log --oneline`
 
 Para traerse commits viejos a head de una rama.
+Trae un commit, de otra rama, y lo incrusta en la rama en la que me encuentre como si se hubiera hecho en esa rama.
 
 `$ git cherry-pick IDCommit`
 
@@ -360,3 +362,15 @@ Para modificar el commit más reciente y su mensaje en la misma línea.
 Para modificar el commit sin modificar el mensaje de dicho commit.
 
 `$ git commit --amend --no-edit`
+
+Para regresar al estado en que el proyecto funcionaba.
+
+`git reset HashDelHEAD`
+
+Para mantener lo que tengas en staging ahí.
+
+`git reset --soft HashDelHEAD`
+
+Para resetear absolutamente todo incluyendo lo que tengas en staging.
+
+`git reset --hard HashDelHEAD`
