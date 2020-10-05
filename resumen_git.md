@@ -420,5 +420,5 @@ Si queremos buscar cuántas veces utilizamos un atributo de HTML lo hacemos con 
 
 # Ciclo de vida del Software
 
-![Curso git](img/ciclo_vida.PNG)
+![Curso git](img/software.PNG)
 ![Curso git](img/herramientas.PNG)

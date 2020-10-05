@@ -344,99 +344,99 @@ Para borra los archivos que pasan por prueba en seco.
 
 Para ver el log de todos los commits realizados en el proyecto.
 
-`$ git log --oneline`
+> `$ git log --oneline`
 
 Para traerse commits viejos a head de una rama.
 Trae un commit, de otra rama, y lo incrusta en la rama en la que me encuentre como si se hubiera hecho en esa rama.
 
-`$ git cherry-pick IDCommit`
+> `$ git cherry-pick IDCommit`
 
 Para modificar el mensaje del commit más reciente.
 
-`$ git commit --amend`
+> `$ git commit --amend`
 
 Para modificar el commit más reciente y su mensaje en la misma línea.
 
-`$ git commit --amend -m`
+> `$ git commit --amend -m`
 
 Para modificar el commit sin modificar el mensaje de dicho commit.
 
-`$ git commit --amend --no-edit`
+> `$ git commit --amend --no-edit`
 
 Para regresar al estado en que el proyecto funcionaba.
 
-`$ git reset HashDelHEAD`
+> `$ git reset HashDelHEAD`
 
 Para mantener lo que tengas en staging ahí.
 
-`$ git reset --soft HashDelHEAD`
+> `$ git reset --soft HashDelHEAD`
 
 Para resetear absolutamente todo incluyendo lo que tengas en staging.
 
-`$ git reset --hard HashDelHEAD`
+> `$ git reset --hard HashDelHEAD`
 
 Buscará en todo el proyecto los archivos en donde está la palabra a buscar.
 
-`$ git grep <palabra_buscar>`
+> `$ git grep <palabra_buscar>`
 
 Saldrá un output el cual nos indicará en qué línea está lo que estamos buscando.
 
-`$ git grep -n <palabra_buscar>`
+> `$ git grep -n <palabra_buscar>`
 
 Saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
 
-`$ git grep -c <palabra_buscar>`
+> `$ git grep -c <palabra_buscar>`
 
 Para buscar cuántas veces utilizamos un atributo de HTML (ejemplo: <p>).
 
-`$ git grep -c "<atributo>"`
+> `$ git grep -c "<atributo>"`
 
 Para buscar una palabra en un commit del historial.
 
-`$ git log -S "<palabra_buscar>"`
+> `$ git log -S "<palabra_buscar>"`
 
 Muestra la descripción de los commits y la cantidad por cada persona.
 
-`$ git shortlog`
+> `$ git shortlog`
 
 Muestra la cantidad de commits por cada persona.
 
-`$ git shortlog --sn`
+> `$ git shortlog --sn`
 
 Muestra todos los commit incluyendo los que fueron borrados.
 
-`$ git shortlog --sn --all`
+> `$ git shortlog --sn --all`
 
 Muestra la cantidad de commit sin incluir los merge.
 
-`$ git shortlog --sn --all --no-merges`
+> `$ git shortlog --sn --all --no-merges`
 
 Para agregar un alias de manera global en git.
 
-`$ git config --global alias.stasts "shortlog --sn --all --no-merges"`
+> `$ git config --global alias.stasts "shortlog --sn --all --no-merges"`
 
 Para ver línea por línea quien ha hecho los cambios.
 
-`$ git blame file.ext`
+> `$ git blame file.ext`
 
 Muestra de una mejor forma las modificaciones realizadas línea por línea.
 
-`git blame -C file.ext`
+> `git blame -C file.ext`
 
 Muestra la documentación para ese comando.
 
-`git command --help`
+> `git command --help`
 
 Muestra los cambios realizados desde la línea 35 hasta 60.
 
-`git blame file.ext -L35,60`
+> `git blame file.ext -L35,60`
 
-`git blame carpeta/file.ext -L35,60 -c`
+> `git blame carpeta/file.ext -L35,60 -c`
 
 Muestra el listado de ramas remotas (Las que están el el servidor).
 
-`git branch -r`
+> `git branch -r`
 
 Muestra todas las ramas, las del repositorio local y las del reposotorio remoto.
 
-`git branch -a`
+> `git branch -a`
