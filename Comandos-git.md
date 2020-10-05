@@ -365,12 +365,32 @@ Para modificar el commit sin modificar el mensaje de dicho commit.
 
 Para regresar al estado en que el proyecto funcionaba.
 
-`git reset HashDelHEAD`
+`$ git reset HashDelHEAD`
 
 Para mantener lo que tengas en staging ahí.
 
-`git reset --soft HashDelHEAD`
+`$ git reset --soft HashDelHEAD`
 
 Para resetear absolutamente todo incluyendo lo que tengas en staging.
 
-`git reset --hard HashDelHEAD`
+`$ git reset --hard HashDelHEAD`
+
+Buscará en todo el proyecto los archivos en donde está la palabra a buscar.
+
+`$ git grep <palabra_buscar>`
+
+Saldrá un output el cual nos indicará en qué línea está lo que estamos buscando.
+
+`$ git grep -n <palabra_buscar>`
+
+Saldrá un output el cual nos dirá cuántas veces se repite esa palabra y en qué archivo.
+
+`$ git grep -c <palabra_buscar>`
+
+Para buscar cuántas veces utilizamos un atributo de HTML (ejemplo: <p>).
+
+`$ git grep -c "<atributo>"`
+
+Para buscar una palabra en un commit del historial.
+
+`git log -S "<palabra_buscar>"`
