@@ -393,4 +393,50 @@ Para buscar cuántas veces utilizamos un atributo de HTML (ejemplo: <p>).
 
 Para buscar una palabra en un commit del historial.
 
-`git log -S "<palabra_buscar>"`
+`$ git log -S "<palabra_buscar>"`
+
+Muestra la descripción de los commits y la cantidad por cada persona.
+
+`$ git shortlog`
+
+Muestra la cantidad de commits por cada persona.
+
+`$ git shortlog --sn`
+
+Muestra todos los commit incluyendo los que fueron borrados.
+
+`$ git shortlog --sn --all`
+
+Muestra la cantidad de commit sin incluir los merge.
+
+`$ git shortlog --sn --all --no-merges`
+
+Para agregar un alias de manera global en git.
+
+`$ git config --global alias.stasts "shortlog --sn --all --no-merges"`
+
+Para ver línea por línea quien ha hecho los cambios.
+
+`$ git blame file.ext`
+
+Muestra de una mejor forma las modificaciones realizadas línea por línea.
+
+`git blame -C file.ext`
+
+Muestra la documentación para ese comando.
+
+`git command --help`
+
+Muestra los cambios realizados desde la línea 35 hasta 60.
+
+`git blame file.ext -L35,60`
+
+`git blame carpeta/file.ext -L35,60 -c`
+
+Muestra el listado de ramas remotas (Las que están el el servidor).
+
+`git branch -r`
+
+Muestra todas las ramas, las del repositorio local y las del reposotorio remoto.
+
+`git branch -a`
